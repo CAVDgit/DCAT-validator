@@ -3,7 +3,9 @@ DCAT Validator
 
 Source: https://www.itb.ec.europa.eu/docs/guides/latest/validatingRDF/index.html
 
-Place the files using keeping the structure.
+Place the files keeping the structure at root.
+
+cd /validator
 
 docker build -t dcat-validator .
 
