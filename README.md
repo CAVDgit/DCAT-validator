@@ -12,3 +12,5 @@ docker build -t dcat-validator .
 docker run -d --name dcat-validator -p 8080:8080 dcat-validator:latest
 
 Access the page at : http://LOCALSERVERIP:8080/shacl/dcat/upload
+
+Swagger interface :  http://LOCALSERVERIP:8080/shacl/swagger-ui.html
