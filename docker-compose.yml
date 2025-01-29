@@ -1,0 +1,11 @@
+services:
+  dcat-validator:
+    image: isaitb/shacl-validator
+    container_name: dcat-validator
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./validator/resources:/validator/resources
+    environment:
+      - validator.resourceRoot=/validator/resources
+    restart: unless-stopped
