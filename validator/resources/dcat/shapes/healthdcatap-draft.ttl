@@ -57,9 +57,11 @@
     ] ;
     sh:targetClass foaf:Agent .
 
-# HealthDCAT-AP
+# HealthDCAT-AP 
+# Publisher Agent Shape (Only for dcat:Dataset publishers)
 healthdcatapShape:HealthPublisherAgent_Shape
     a sh:NodeShape ;
+    sh:extends :Agent_Shape ;
     rdfs:label "Health Publisher Agent"@en ;
     sh:property [
         sh:minCount 1 ;
@@ -90,8 +92,7 @@ healthdcatapShape:HealthPublisherAgent_Shape
         sh:nodeKind sh:Literal ;
         sh:path healthdcatap:trustedDataHolder ;
         sh:severity sh:Violation
-    ] ;
-    sh:targetClass foaf:Agent .
+    ] . 
 
 :CatalogRecord_Shape
     a sh:NodeShape ;
@@ -373,10 +374,8 @@ healthdcatapShape:HealthDataset_Shape
         sh:class vcard:Kind ;
         sh:severity sh:Violation
     ], [
-        # HealthDCAT-AP
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:node :Agent_Shape ; # Base shape for generic foaf:Agent
         sh:path dct:creator ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:severity sh:Violation
     ], [
         # HealthDCAT-AP
@@ -474,12 +473,10 @@ healthdcatapShape:HealthDataset_Shape
         # HealthDCAT-AP
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:or (
-            [ sh:nodeKind sh:IRI ; sh:node healthdcatapShape:HealthPublisherAgent_Shape ]
-            [ sh:nodeKind sh:BlankNode ; sh:node healthdcatapShape:HealthPublisherAgent_Shape ]
-        ) ;
         sh:path dct:publisher ;
-        sh:severity sh:Violation
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class foaf:Agent ;
+        sh:node healthdcatapShape:HealthPublisherAgent_Shape ;
     ], [
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:path prov:qualifiedAttribution ;
