@@ -27,7 +27,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix healthdcatapShape: <https://healthdcat-ap.github.io/shapes.ttl#> .  # to be modified when available
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .  # to be modified when available
-
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
 
 <https://semiceu.github.io/DCAT-AP/releases/3.0.0/html/shacl/shapes.ttl> 
     dct:format <http://publications.europa.eu/resource/authority/file-type/RDF_TURTLE> ;
