@@ -15,7 +15,7 @@
 
   owl:imports <http://publications.europa.eu/resource/authority/language> ;
   owl:imports <http://publications.europa.eu/resource/authority/corporate-body> ;
-  owl:imports <https://github.com/SEMICeu/DCAT-AP/raw/master/releases/2.0.1/dcat-ap_2.0.1.rdf> ;
+  # owl:imports <https://github.com/SEMICeu/DCAT-AP/raw/master/releases/2.0.1/dcat-ap_2.0.1.rdf> ;
   owl:imports <http://publications.europa.eu/resource/authority/continent> ;
   owl:imports <http://publications.europa.eu/resource/authority/country> ; 
   owl:imports <http://publications.europa.eu/resource/authority/dataset-type> ;
